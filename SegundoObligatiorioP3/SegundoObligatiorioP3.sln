@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "..\..\source\repos\SegundoObligatiorioP3\Dominio\Dominio.csproj", "{34FB3DA8-BAA5-4BCA-A011-EC03A4286386}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{34FB3DA8-BAA5-4BCA-A011-EC03A4286386}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "..\..\source\repos\SegundoObligatiorioP3\DataAccess\DataAccess.csproj", "{D2DB09C4-4A96-47E9-A42D-831D58ABFD9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{D2DB09C4-4A96-47E9-A42D-831D58ABFD9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SegundoObligatorio", "..\..\source\repos\SegundoObligatiorioP3\SegundoObligatorio\SegundoObligatorio.csproj", "{03958246-1085-4BEE-A5F1-A70DC4627E07}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.CodeFirst.DataAccess.Test", "..\Clases 2do Obli\EjemploEFCodeFirst\EF.CodeFirst.DataAccess.Test\EF.CodeFirst.DataAccess.Test.csproj", "{D42306D8-F3D9-45B5-ADDF-2C98C9FE8927}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegundoObligatorio", "SegundoObligatorio\SegundoObligatorio.csproj", "{03958246-1085-4BEE-A5F1-A70DC4627E07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{03958246-1085-4BEE-A5F1-A70DC4627E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03958246-1085-4BEE-A5F1-A70DC4627E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03958246-1085-4BEE-A5F1-A70DC4627E07}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D42306D8-F3D9-45B5-ADDF-2C98C9FE8927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D42306D8-F3D9-45B5-ADDF-2C98C9FE8927}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D42306D8-F3D9-45B5-ADDF-2C98C9FE8927}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D42306D8-F3D9-45B5-ADDF-2C98C9FE8927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

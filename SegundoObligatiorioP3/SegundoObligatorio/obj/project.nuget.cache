@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NYOg5XgFNrEyrGllxRAhJFrNp9xVYTpWy3Gih5uPAzpBrVM5HAGLMyJqdNE8glqKq6pjhDbNhwpTuTfc3af+NA==",
+  "dgSpecHash": "esweBw2F9HrhR5jfD6cf42Zc/8dpDxL03vajysfi/xbcu3WWEzHkKJx5OjSs4IzF2pKpSRr49HDbWapfZrwikw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\renzo\\Desktop\\Obl2-p3\\ObligatorioP3-2\\SegundoObligatiorioP3\\SegundoObligatorio\\SegundoObligatorio.csproj",
+  "projectFilePath": "C:\\Users\\renzo\\Desktop\\SegundoObligatiorioP3\\SegundoObligatorio\\SegundoObligatorio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\renzo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\renzo\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
