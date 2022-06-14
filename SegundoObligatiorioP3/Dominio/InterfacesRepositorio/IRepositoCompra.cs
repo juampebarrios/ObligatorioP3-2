@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dominio.InterfacesRepositorio
 {
-    public interface IRepositoCompra
+    public interface IRepositoCompra : IRepositorios<Compra>
     {
     }
 }
