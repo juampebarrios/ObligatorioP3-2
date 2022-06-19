@@ -131,7 +131,7 @@ namespace SegundoObligatorio.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(tipo);
         }
 

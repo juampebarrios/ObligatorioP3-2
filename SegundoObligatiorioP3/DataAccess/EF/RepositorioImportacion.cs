@@ -47,10 +47,13 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-            Importacion importacion = FindById(Clave);
-            _dbContext.Importacion.Remove(importacion);
-            result = _dbContext.SaveChanges() > 0;
 
+            Importacion autor = FindById(((Importacion)Clave).IdCompra);
+            if (autor != null)
+            {
+                _dbContext.Importacion.Remove(autor);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 

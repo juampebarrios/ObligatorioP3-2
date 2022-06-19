@@ -49,10 +49,13 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-            Planta miPlanta = FindById(Clave);
-            _dbContext.Planta.Remove(miPlanta);
-            result = _dbContext.SaveChanges() > 0;
 
+            Planta autor = FindById(((Planta)Clave).IdPlanta);
+            if (autor != null)
+            {
+                _dbContext.Planta.Remove(autor);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 

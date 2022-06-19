@@ -38,6 +38,7 @@ namespace DataAccess.EF
 
         public TipoPlanta FindById(object Clave)
         {
+            
             TipoPlanta result = null;
             int id = (int)Clave;
             result = _dbContext.TipoPlanta.Find(id);
@@ -48,7 +49,7 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-            TipoPlanta tp = FindById(Clave);
+            TipoPlanta tp = FindById(((TipoPlanta)Clave).IdTipoPlanta);
             _dbContext.TipoPlanta.Remove(tp);
             result = _dbContext.SaveChanges() > 0;
 
