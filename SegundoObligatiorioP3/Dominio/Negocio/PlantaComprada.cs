@@ -21,7 +21,7 @@ namespace Dominio
         public int IdCompra { get; set; }
 
         [ForeignKey("IdCompra")]
-        public virtual Compra miCompra { get; set; }
+        public Compra miCompra { get; set; }
 
         
         public int IdPlanta { get; set; }
