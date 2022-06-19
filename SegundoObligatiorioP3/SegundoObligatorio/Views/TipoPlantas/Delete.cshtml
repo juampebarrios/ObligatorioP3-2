@@ -24,9 +24,9 @@
             @Html.DisplayFor(model => model.DescripcionTipo)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
-        <input type="hidden" asp-for="IdTipoPlanta" />
+        <input type="hidden" asp-for="IdTipoPlanta" name="id"/>
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

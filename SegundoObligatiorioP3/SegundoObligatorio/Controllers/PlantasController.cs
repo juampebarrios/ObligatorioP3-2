@@ -15,11 +15,13 @@ namespace SegundoObligatorio.Controllers
     public class PlantasController : Controller
     {
         private readonly IRepositorioPlanta _repoPlanta;
+        private readonly IRepositorioTipoPlanta _repoTipo;
 
 
-        public PlantasController(IRepositorioPlanta repoPlanta)
+        public PlantasController(IRepositorioPlanta repoPlanta, IRepositorioTipoPlanta repoTipo)
         {
             _repoPlanta = repoPlanta;
+            _repoTipo = repoTipo;
         }
 
         // GET: Plantas
@@ -48,6 +50,7 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Create
         public IActionResult Create()
         {
+            ViewBag.Tipos = _repoTipo.FindAll();
             return View();
         }
 
@@ -86,6 +89,7 @@ namespace SegundoObligatorio.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Tipos = _repoTipo.FindAll();
             return View(planta);
         }
 

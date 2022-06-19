@@ -48,8 +48,9 @@
                 <span asp-validation-for="Precio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdTipoPlanta" class="control-label"></label>
-                <select asp-for="IdTipoPlanta" class ="form-control" asp-items="ViewBag.IdTipoPlanta"></select>
+                <label asp-for="MiTipoPlanta" class="control-label"></label>
+                @Html.DropDownListFor(model => model.IdTipoPlanta, new SelectList(@ViewBag.Tipos, "IdTipoPlanta", "NombreUnico", "DescripcionTipo"), "Seleccione...", new { @class = "form-control" })
+                <span asp-validation-for="@Model.IdTipoPlanta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

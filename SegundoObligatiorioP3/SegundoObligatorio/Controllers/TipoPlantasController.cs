@@ -9,7 +9,7 @@ using DataAccess.Contexto;
 using Dominio;
 using Dominio.InterfacesRepositorio;
 using SegundoObligatorio.Models;
-
+using Microsoft.AspNetCore.Http;
 
 namespace SegundoObligatorio.Controllers
 {
@@ -140,6 +140,7 @@ namespace SegundoObligatorio.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
+            int miId = Convert.ToInt32(ViewBag.id);
             try
             {
                 var tipo = _repoTipoPlanta.FindById(id);
