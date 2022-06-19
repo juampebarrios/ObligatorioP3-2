@@ -11,24 +11,33 @@ namespace Dominio
     {
         [Key]
         public int IdPlanta { get; set; }
-        [Required]
-        [ForeignKey("TipoPlanta")]
-        public int idTipoPlanta { get; set; }
-        public TipoPlanta MiTipoPlanta { get; set; }
+
         [Required]
         public string NombreCientifico { get; set; }
+
         [Required]
         public string NombreVulgar { get; set; }
+
         [Required]
         public string Descripcion { get; set; }
+
         [Required]
         public string Ambiente { get; set; }
+
         [Required]
         public double AlturaMax { get; set; }
+
         [Required]
         public string Foto { get; set; }
+
         [Required]
         public double Precio { get; set; }
+
+
+        public int IdTipoPlanta { get; set; }
+
+        [ForeignKey("IdTipoPlanta")]
+        public TipoPlanta MiTipoPlanta { get; set; }
     }
 }
 

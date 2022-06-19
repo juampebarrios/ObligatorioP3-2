@@ -10,16 +10,21 @@ namespace Dominio
     public class FichaCuidado
     {
         [Key]
-        public int idFicha { get; set; }
+        public int IdFicha { get; set; }
+
         [Required]
         public string FrecuenciaRiego { get; set; }
+
         [Required]
         public string TipoIluminacion { get; set; }
+
         [Required]
         public int Temperatura { get; set; }
-       
-        [ForeignKey("Planta")]
-        public int idPlanta { get; set; }
-        public Planta miPlanta { get; set; }
+
+        [Required]
+        public int IdPlanta { get; set; }
+
+        [ForeignKey("IdPlanta")]
+        public virtual TipoPlanta miPlanta { get; set; }
     }
 }

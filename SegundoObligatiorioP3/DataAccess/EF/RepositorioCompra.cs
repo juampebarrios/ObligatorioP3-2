@@ -9,8 +9,8 @@ namespace DataAccess.EF
 {
     public class RepositorioCompra : IRepositoCompra
     {
-        Vivero _dbContext;
-        public RepositorioCompra(Vivero dbContext)
+        ViveroContexto _dbContext;
+        public RepositorioCompra(ViveroContexto dbContext)
         {
             _dbContext = dbContext;
         }

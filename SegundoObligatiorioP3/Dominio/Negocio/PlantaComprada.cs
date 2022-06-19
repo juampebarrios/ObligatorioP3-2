@@ -11,13 +11,22 @@ namespace Dominio
     {
         [Key]
         public int IdPlantaComprada { get; set; }
-        [Required]
-        [ForeignKey("Planta")]
-        public int idPlanta { get; set; }
-        public Planta UnaPlanta { get; set; }
+
         [Required]
         public int Cantidad { get; set; }
         [Required]
         public double PrecioUnitario { get; set; }
+        
+        
+        public int IdCompra { get; set; }
+
+        [ForeignKey("IdCompra")]
+        public virtual Compra miCompra { get; set; }
+
+        
+        public int IdPlanta { get; set; }
+
+        [ForeignKey("IdPlanta")]
+        public TipoPlanta UnaPlanta { get; set; }
     }
 }

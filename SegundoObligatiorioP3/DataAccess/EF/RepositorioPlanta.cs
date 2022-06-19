@@ -10,9 +10,9 @@ namespace DataAccess.EF
 {
     public class RepositorioPlanta : IRepositorioPlanta
     {
-        Vivero _dbContext;
+        ViveroContexto _dbContext;
 
-        public RepositorioPlanta(Vivero dbContext)
+        public RepositorioPlanta(ViveroContexto dbContext)
         {
             _dbContext = dbContext;
         }
@@ -29,11 +29,12 @@ namespace DataAccess.EF
 
         public IEnumerable<Planta> FindAll()
         {
-            IEnumerable<Planta> result = null;
+           IEnumerable<Planta> result = null;
 
-            result = _dbContext.Planta.ToList();
+                result = _dbContext.Planta.ToList();
 
-            return result;
+                return result;
+          
         }
 
         public Planta FindById(object Clave)
@@ -48,8 +49,8 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-            Planta autor = FindById(Clave);
-            _dbContext.Planta.Remove(autor);
+            Planta miPlanta = FindById(Clave);
+            _dbContext.Planta.Remove(miPlanta);
             result = _dbContext.SaveChanges() > 0;
 
             return result;

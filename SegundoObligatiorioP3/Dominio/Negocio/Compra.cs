@@ -7,18 +7,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Dominio
 {
     [Table("Compra")]
-    public class Compra
+    public abstract class Compra
     {
         [Key]
         public int IdCompra { get; set; }
+
         [Required]
         public DateTime FechaCompra { get; set; }
         [Required]
         public double PrecioCompra { get; set; }
-        
 
-        //revisar
-        [ForeignKey("PlantaComprada")]
+
+        [NotMapped]
         public List<PlantaComprada> PlantasCompradas { get; set; }
     }
 }

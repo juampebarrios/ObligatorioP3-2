@@ -11,8 +11,10 @@ namespace Dominio
     {
         [Key]
         public int IdTipoPlanta { get; set; }
+
         [Required]
         public string NombreUnico { get; set; }
+
         [Required]
         public string DescripcionTipo { get; set; }
     }

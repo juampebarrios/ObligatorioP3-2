@@ -8,6 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dominio;
+using Dominio.InterfacesRepositorio;
+using DataAccess.EF;
+using DataAccess.Contexto;
+using Microsoft.EntityFrameworkCore;
 
 namespace SegundoObligatorio
 {
@@ -24,6 +29,13 @@ namespace SegundoObligatorio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+
+            services.AddScoped<IRepositorioPlanta, RepositorioPlanta>();
+            services.AddScoped<IRepositorioTipoPlanta, RepositorioTipoPlanta>();
+            //Inyeccion de dependencias
+            services.AddDbContext<ViveroContexto>
+                (opt => opt.UseSqlServer(Configuration.GetConnectionString("ConexionVivero")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
