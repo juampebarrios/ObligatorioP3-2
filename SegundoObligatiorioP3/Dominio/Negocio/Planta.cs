@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Dominio
 {
@@ -16,9 +17,10 @@ namespace Dominio
         public string NombreCientifico { get; set; }
 
         [Required]
-        public string NombreVulgar { get; set; }
+        public string NombreVulgar { get; set ; }
 
-        [Required]
+        [Required, StringLength(200, MinimumLength = 10)]
+   
         public string Descripcion { get; set; }
 
         [Required]
@@ -38,6 +40,10 @@ namespace Dominio
 
         [ForeignKey("IdTipoPlanta")]
         public TipoPlanta MiTipoPlanta { get; set; }
+
+
+
+
     }
 }
 

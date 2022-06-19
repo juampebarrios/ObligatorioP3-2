@@ -27,7 +27,16 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas
         public IActionResult Index()
         {
-            return View(_repoTipoPlanta.FindAll());
+
+            ViewBag.Mensaje = "No se encontraron Tipos";
+
+            IEnumerable<TipoPlanta> misTipoPlanta = _repoTipoPlanta.FindAll();
+            if (misTipoPlanta != null)
+                return View(misTipoPlanta);
+            else
+
+                return View(ViewBag.Mensaje);
+
         }
 
         // GET: Plantas/Details/5

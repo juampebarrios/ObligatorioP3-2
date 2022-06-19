@@ -4,74 +4,87 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>Listado de Plantas</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Agregar una planta nueva</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreCientifico)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreVulgar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ambiente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AlturaMax)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MiTipoPlanta)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreCientifico)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreVulgar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ambiente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AlturaMax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MiTipoPlanta.DescripcionTipo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdPlanta">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdPlanta">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdPlanta">Delete</a>
-            </td>
-        </tr>
+@if (Model.Count() != 0)
+{
+
+
+
+
+    <table class="table" id="1">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreCientifico)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreVulgar)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ambiente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlturaMax)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Foto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MiTipoPlanta)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreCientifico)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreVulgar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ambiente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AlturaMax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MiTipoPlanta.DescripcionTipo)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdPlanta">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdPlanta">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdPlanta">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 }
-    </tbody>
-</table>
+else
+{
+    <p> @ViewBag.Mensaje</p>
+}
+

@@ -12,7 +12,7 @@ namespace Dominio
         [Key]
         public int IdCompra { get; set; }
 
-        [Required]
+        [Required, DataType(DataType.Date)]
         public DateTime FechaCompra { get; set; }
         [Required]
         public double PrecioCompra { get; set; }

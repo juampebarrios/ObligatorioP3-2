@@ -243,3 +243,9 @@ C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObli
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.Views.pdb
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.csproj.CopyComplete
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.genruntimeconfig.cache
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Create.cshtml.g.cs
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Delete.cshtml.g.cs
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Details.cshtml.g.cs
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Edit.cshtml.g.cs
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Login.cshtml.g.cs
