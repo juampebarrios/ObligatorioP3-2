@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio
 {
+    [Table("Usuario")]
     public class Usuario
     {
         [Key]

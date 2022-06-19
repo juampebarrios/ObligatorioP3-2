@@ -50,9 +50,15 @@ namespace DataAccess.EF
         {
             bool result = false;
             TipoPlanta tp = FindById(((TipoPlanta)Clave).IdTipoPlanta);
-            _dbContext.TipoPlanta.Remove(tp);
-            result = _dbContext.SaveChanges() > 0;
+            
+            var t = from miPlanta in _dbContext.Planta where miPlanta.IdTipoPlanta == tp.IdTipoPlanta select miPlanta.IdTipoPlanta;
+            if (t  == null)
+            {
 
+                _dbContext.TipoPlanta.Remove(tp);
+                result = _dbContext.SaveChanges() > 0;
+
+            }
             return result;
         }
 

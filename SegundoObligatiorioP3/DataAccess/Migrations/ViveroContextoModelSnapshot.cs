@@ -172,13 +172,15 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdUsuario");
+
+                    b.HasAlternateKey("Email");
 
                     b.ToTable("Usuario");
                 });
@@ -219,7 +221,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Dominio.FichaCuidado", b =>
                 {
-                    b.HasOne("Dominio.TipoPlanta", "miPlanta")
+                    b.HasOne("Dominio.Planta", "miPlanta")
                         .WithMany()
                         .HasForeignKey("IdPlanta")
                         .OnDelete(DeleteBehavior.Cascade)

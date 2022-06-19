@@ -38,6 +38,8 @@ namespace DataAccess.EF
         public Usuario FindById(object Clave)
         {
             Usuario result = null;
+            if (Clave == null)
+                return result;
             int id = (int)Clave;
             result = _dbContext.Usuario.Find(id);
 
@@ -49,6 +51,7 @@ namespace DataAccess.EF
             var result = from miUsuario in _dbContext.Usuario where miUsuario.Email == usu && miUsuario.Password == pass select miUsuario.IdUsuario;
             Usuario logueo = FindById(result);
             return logueo;
+            
         }
 
         public bool Remove(object Clave)

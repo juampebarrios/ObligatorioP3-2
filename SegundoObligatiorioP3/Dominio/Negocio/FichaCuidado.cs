@@ -21,10 +21,9 @@ namespace Dominio
         [Required]
         public int Temperatura { get; set; }
 
-        [Required]
         public int IdPlanta { get; set; }
 
         [ForeignKey("IdPlanta")]
-        public virtual TipoPlanta miPlanta { get; set; }
+        public virtual Planta miPlanta { get; set; }
     }
 }

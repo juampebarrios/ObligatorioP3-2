@@ -23,33 +23,35 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Plantas
                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Plantas" asp-action="Index">Listado Plantas</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Plantas" asp-action="Create">Agregar Planta</a>
-                                </div>
-                            </li>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Plantas" asp-action="Index">Listado Plantas</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Plantas" asp-action="Create">Agregar Planta</a>
+                            </div>
+                        </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tipo de Plantas
-                                </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tipo de Plantas
+                            </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="TipoPlantas" asp-action="Index">Listar Tipo</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="TipoPlantas" asp-action="Create">Agregar Tipo</a>
-                                </div>
-                            </li>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="TipoPlantas" asp-action="Index">Listar Tipo</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="TipoPlantas" asp-action="Create">Agregar Tipo</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cuenta
+                            </a>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Usuarios" asp-action="LogOut">Logout</a>
-                            </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Usuarios" asp-action="Login">Login</a>
-                                </li>
-                            
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Login">Login</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Logout">Logout</a>
+                            </div>
+                        </li>
 
 
-                        </ul>
+                    </ul>
                     </div>
                 </div>
             </nav>

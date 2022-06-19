@@ -18,12 +18,14 @@ namespace DataAccess.Contexto
         {
 
         }
+        #region
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"data source=.\; database=SegundoObligatorio; integrated security=true;");
         }
         */
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             
@@ -37,6 +39,7 @@ namespace DataAccess.Contexto
             modelBuilder.Entity<TipoPlanta>();
             modelBuilder.Entity<Usuario>();
 
+            modelBuilder.Entity<Usuario>().HasAlternateKey(u => u.Email);
 
             modelBuilder.Entity<Planta>().HasOne(t => t.MiTipoPlanta);
             modelBuilder.Entity<FichaCuidado>().HasOne(p => p.miPlanta);

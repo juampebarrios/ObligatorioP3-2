@@ -26,13 +26,13 @@ namespace SegundoObligatorio.Controllers
         // GET: Usuarios
         public IActionResult Index()
         {
-            HttpContext.Session.Clear();
-            return View();
+            return View("~/Login");
 
         }
         public IActionResult Login()
         {
-            return View("~/Views/Home/Index.cshtml");
+            return View();
+            //  return View("~/Views/Home/Index.cshtml");
         }
 
         [HttpPost]
@@ -44,7 +44,7 @@ namespace SegundoObligatorio.Controllers
                 if (miUsu != null)
                 {
                     ViewBag.usuario = miUsu;
-                    return View("~/Views/Home/Index.cshtml");
+                    return View("~/Home/Index");
                 }
                 else
                 {
@@ -54,14 +54,14 @@ namespace SegundoObligatorio.Controllers
             }
             else
             {
-                return View();
+                return View("Index");
             }
         }
 
         public ActionResult LogOut()
         {
-            HttpContext.Session.Clear();
-            return View("~/Views/Login/Index.cshtml");
+            ViewBag.usuario = null;
+            return View("~/Views/Usuarios/Index.cshtml");
         }
 
 

@@ -31,6 +31,7 @@ namespace SegundoObligatorio
             services.AddControllersWithViews();
 
 
+            services.AddScoped<IRepositorioUsuario, RepositorioUsuario> ();
             services.AddScoped<IRepositorioPlanta, RepositorioPlanta>();
             services.AddScoped<IRepositorioTipoPlanta, RepositorioTipoPlanta>();
             //Inyeccion de dependencias
