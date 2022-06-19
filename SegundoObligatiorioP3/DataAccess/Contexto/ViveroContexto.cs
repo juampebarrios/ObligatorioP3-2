@@ -8,7 +8,7 @@ namespace DataAccess.Contexto
 {
     public class ViveroContexto : DbContext
     {
-        string _connString;
+        public string _connString;
         public ViveroContexto(string connString)
         {
             _connString = connString;
