@@ -15,7 +15,9 @@ namespace Dominio
         public DateTime FechaCompra { get; set; }
         [Required]
         public double PrecioCompra { get; set; }
-        [Required]
+        
+
+        //revisar
         [ForeignKey("PlantaComprada")]
         public List<PlantaComprada> PlantasCompradas { get; set; }
     }

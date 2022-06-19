@@ -17,8 +17,9 @@ namespace Dominio
         public string TipoIluminacion { get; set; }
         [Required]
         public int Temperatura { get; set; }
-        [Required]
+       
         [ForeignKey("Planta")]
+        public int idPlanta { get; set; }
         public Planta miPlanta { get; set; }
     }
 }

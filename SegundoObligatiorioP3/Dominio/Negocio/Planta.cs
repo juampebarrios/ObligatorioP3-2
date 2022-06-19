@@ -13,6 +13,7 @@ namespace Dominio
         public int IdPlanta { get; set; }
         [Required]
         [ForeignKey("TipoPlanta")]
+        public int idTipoPlanta { get; set; }
         public TipoPlanta MiTipoPlanta { get; set; }
         [Required]
         public string NombreCientifico { get; set; }

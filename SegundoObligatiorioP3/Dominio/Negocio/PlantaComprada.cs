@@ -13,6 +13,7 @@ namespace Dominio
         public int IdPlantaComprada { get; set; }
         [Required]
         [ForeignKey("Planta")]
+        public int idPlanta { get; set; }
         public Planta UnaPlanta { get; set; }
         [Required]
         public int Cantidad { get; set; }
