@@ -20,7 +20,8 @@ namespace DataAccess.EF
         public bool Add(Planta obj)
         {
             bool result = false;
-
+            
+            
             _dbContext.Add<Planta>(obj);
             result = _dbContext.SaveChanges() > 0;
 
@@ -34,7 +35,7 @@ namespace DataAccess.EF
                 result = _dbContext.Planta.ToList();
 
                 return result;
-          
+            
         }
 
         public Planta FindById(object Clave)
@@ -44,14 +45,6 @@ namespace DataAccess.EF
             result = _dbContext.Planta.Find(id);
 
             return result;
-        }
-
-        public Planta FindByName(object nombreCientifico)
-        {
-            Planta res = _dbContext.Planta
-                      .Where(p => p.NombreCientifico == nombreCientifico.ToString())
-                      .FirstOrDefault();
-            return res;
         }
 
         public bool Remove(object Clave)

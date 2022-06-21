@@ -1,5 +1,6 @@
 ﻿@model Dominio.Planta
 
+
 @{
     ViewData["Title"] = "Create";
 }
@@ -29,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Ambiente" class="control-label"></label>
-                <input asp-for="Ambiente" class="form-control" />
+                <input asp-for="Ambiente" class="form-control" type="number  />
                 <span asp-validation-for="Ambiente" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,25 +45,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="Precio" class="control-label"></label>
-                <input asp-for="Precio" class="form-control" />
+                <input asp-for="Precio" class="form-control" type="number   />
                 <span asp-validation-for="Precio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MiTipoPlanta" class="control-label"></label>
                 @Html.DropDownListFor(model => model.IdTipoPlanta, new SelectList(@ViewBag.Tipos, "IdTipoPlanta", "NombreUnico", "DescripcionTipo"), "Seleccione...", new { @class = "form-control" })
-                <span asp-validation-for="@Model.IdTipoPlanta" class="text-danger" ></span>
+                <span asp-validation-for="@Model.IdTipoPlanta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-        </form>
+
+        </form>            <div>
+            <p>
+                @ViewBag.Retorno
+            </p>
+        </div>
     </div>
+
 </div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

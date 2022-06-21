@@ -29,11 +29,9 @@ namespace SegundoObligatorio.Controllers
         public IActionResult Index()
         {
             ViewBag.Mensaje = "No se encontraron Plantas";
-            if (ViewData["retorno"] == null)
-            {
-                ViewData["retorno"] = "";
-            }
-           
+            
+
+
             IEnumerable<Planta> misPlantas = _repoPlanta.FindAll();
             if (misPlantas != null)
                 return View(misPlantas);
@@ -63,7 +61,10 @@ namespace SegundoObligatorio.Controllers
         public IActionResult Create()
         {
             ViewBag.Tipos = _repoTipo.FindAll();
-            ViewData["retorno"] = "";
+            if (ViewBag.Retorno != null)
+            { 
+                     ViewBag.Tipos = _repoTipo.FindAll(); 
+                return View(ViewBag.Retorno);}
             return View();
         }
 
@@ -76,20 +77,24 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (ModelState.IsValid) 
                 {
-                    if (_repoPlanta.FindByName(planta.NombreCientifico) != null)
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(planta.NombreCientifico,
+                                           "^[a-zA-Z'.]$")) 
                     {
-                        ViewData["retorno"] = "Nombre cientifico existente, no se puede agregar la planta";
-                        
+                        ViewBag.Retorno = "Error - Nombre no puede contener numeros";
+                        ViewBag.Tipos = _repoTipo.FindAll();
                     }
-                    else
+                    if (_repoPlanta.FindByName(planta.NombreCientifico) != null) 
                     {
-                        _repoPlanta.Add(planta);
+                        ViewBag.Retorno = "Erro1r - Ya existe planta con ese Nombre Cientifico";
+                        ViewBag.Tipos = _repoTipo.FindAll();
                     }
+                    return View();
                 }
-                
+                _repoPlanta.Add(planta);
                 return RedirectToAction(nameof(Index));
+
             }
             catch (Exception)
             {

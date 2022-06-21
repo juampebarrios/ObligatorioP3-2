@@ -71,8 +71,15 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(miTipoPlantas.NombreUnico,
+                                               "^[a-zA-Z'.]"))
+                {
+                    ViewBag.Retorno = "Error - Nombre no puede contener numeros";
+                    return View();
+                }
                 if (ModelState.IsValid)
                 {
+
                     _repoTipoPlanta.Add(miTipoPlantas);
                     return RedirectToAction(nameof(Index));
                 }
