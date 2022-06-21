@@ -47,6 +47,11 @@ namespace DataAccess.EF
             return result;
         }
 
+        public Planta FindByName(object Name)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Remove(object Clave)
         {
             bool result = false;
