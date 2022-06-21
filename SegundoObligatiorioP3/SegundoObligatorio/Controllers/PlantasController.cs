@@ -18,6 +18,7 @@ namespace SegundoObligatorio.Controllers
         private readonly IRepositorioTipoPlanta _repoTipo;
 
 
+
         public PlantasController(IRepositorioPlanta repoPlanta, IRepositorioTipoPlanta repoTipo)
         {
             _repoPlanta = repoPlanta;
@@ -28,6 +29,11 @@ namespace SegundoObligatorio.Controllers
         public IActionResult Index()
         {
             ViewBag.Mensaje = "No se encontraron Plantas";
+            if (ViewData["retorno"] == null)
+            {
+                ViewData["retorno"] = "";
+            }
+           
             IEnumerable<Planta> misPlantas = _repoPlanta.FindAll();
             if (misPlantas != null)
                 return View(misPlantas);
@@ -57,6 +63,7 @@ namespace SegundoObligatorio.Controllers
         public IActionResult Create()
         {
             ViewBag.Tipos = _repoTipo.FindAll();
+            ViewData["retorno"] = "";
             return View();
         }
 
@@ -67,13 +74,22 @@ namespace SegundoObligatorio.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Planta planta)
         {
-            try {
+            try
+            {
                 if (ModelState.IsValid)
                 {
-                    _repoPlanta.Add(planta);
-                    return RedirectToAction(nameof(Index));
+                    if (_repoPlanta.FindByName(planta.NombreCientifico) != null)
+                    {
+                        ViewData["retorno"] = "Nombre cientifico existente, no se puede agregar la planta";
+                        
+                    }
+                    else
+                    {
+                        _repoPlanta.Add(planta);
+                    }
                 }
-                return View(planta);
+                
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {

@@ -21,3 +21,14 @@ C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.genruntimeconfig.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\bin\Debug\netcoreapp3.1\Dominio.deps.json
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\bin\Debug\netcoreapp3.1\Dominio.runtimeconfig.json
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\bin\Debug\netcoreapp3.1\Dominio.runtimeconfig.dev.json
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfoInputs.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfo.cs
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\Dominio\obj\Debug\netcoreapp3.1\Dominio.genruntimeconfig.cache

@@ -11,6 +11,7 @@ namespace Dominio.InterfacesRepositorio
 		public bool Remove(object Clave);
 		public bool Update(T obj);
 		public T FindById(object Clave);
+		
 		public IEnumerable<T> FindAll();
 	}
 }

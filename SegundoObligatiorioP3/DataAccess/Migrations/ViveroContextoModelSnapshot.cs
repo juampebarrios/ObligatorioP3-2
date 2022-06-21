@@ -152,7 +152,8 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("DescripcionTipo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("NombreUnico")
                         .IsRequired()
@@ -245,7 +246,7 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Dominio.TipoPlanta", "UnaPlanta")
+                    b.HasOne("Dominio.Planta", "UnaPlanta")
                         .WithMany()
                         .HasForeignKey("IdPlanta")
                         .OnDelete(DeleteBehavior.Cascade)

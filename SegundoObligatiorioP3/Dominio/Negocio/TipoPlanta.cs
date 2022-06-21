@@ -15,7 +15,7 @@ namespace Dominio
         [Required]
         public string NombreUnico { get; set; }
 
-        [Required]
+        [Required, StringLength(200, MinimumLength = 10)]
         public string DescripcionTipo { get; set; }
     }
 }

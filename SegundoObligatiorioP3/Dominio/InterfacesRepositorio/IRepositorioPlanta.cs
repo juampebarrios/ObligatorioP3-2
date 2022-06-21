@@ -7,5 +7,7 @@ namespace Dominio.InterfacesRepositorio
 {
     public interface IRepositorioPlanta : IRepositorios<Planta>
     {
+
+        public Planta FindByName(object Name);
     }
 }

@@ -46,6 +46,14 @@ namespace DataAccess.EF
             return result;
         }
 
+        public Planta FindByName(object nombreCientifico)
+        {
+            Planta res = _dbContext.Planta
+                      .Where(p => p.NombreCientifico == nombreCientifico.ToString())
+                      .FirstOrDefault();
+            return res;
+        }
+
         public bool Remove(object Clave)
         {
             bool result = false;

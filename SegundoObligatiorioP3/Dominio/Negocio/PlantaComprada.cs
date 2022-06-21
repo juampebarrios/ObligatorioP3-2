@@ -27,6 +27,6 @@ namespace Dominio
         public int IdPlanta { get; set; }
 
         [ForeignKey("IdPlanta")]
-        public TipoPlanta UnaPlanta { get; set; }
+        public Planta UnaPlanta { get; set; }
     }
 }
