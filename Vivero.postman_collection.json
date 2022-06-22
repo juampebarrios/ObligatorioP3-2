@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "bdf663dd-ded2-4740-b0ed-bcbfd6ceea0a",
+		"name": "Vivero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Importacion",
+			"item": [
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FechaCompra\":\"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"PrecioCompra\" : 200,\r\n    \"TasaImpuesto\" : 100,\r\n    \"EsAmericaSur\" : true,\r\n    \"Descripcion\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tasaImpuesto\": 100,\r\n    \"esAmericaSur\": false,\r\n    \"descripcion\": \"t\",\r\n    \"idCompra\": 9,\r\n    \"fechaCompra\": \"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"precioCompra\": 150,\r\n    \"plantasCompradas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plaza",
+			"item": [
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FechaCompra\":\"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"PrecioCompra\" : 200,\r\n    \"Flete\" : true,\r\n    \"Iva\" : 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:52132/api/Plaza/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Plaza",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"flete\": false,\r\n        \"iva\": 20,\r\n        \"idCompra\": 10,\r\n        \"fechaCompra\": \"2022-06-09T21:54:10.5748546\",\r\n        \"precioCompra\": 200,\r\n        \"plantasCompradas\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:52132/api/Plaza/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Plaza",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52132/api/Importacion/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52132",
+							"path": [
+								"api",
+								"Importacion",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

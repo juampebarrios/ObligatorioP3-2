@@ -9,7 +9,7 @@ namespace DataAccess.EF
 {
     public class RepositorioImportacion : IRepositorioImportacion
     {
-        ViveroContexto _dbContext;
+        public readonly ViveroContexto _dbContext;
 
         public RepositorioImportacion(ViveroContexto dbContext)
         {
