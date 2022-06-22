@@ -32,7 +32,7 @@ namespace VivieroebApi2
         {
             services.AddControllers();
 
-            //services.AddScoped<IRepositoCompra, RepositoCompra>();
+            services.AddScoped<IRepositorioPlanta, RepositorioPlanta>();
             services.AddScoped<IRepositorioPlaza, RepositorioPlaza>();
             services.AddScoped<IRepositorioImportacion, RepositorioImportacion>();
             //Inyeccion de dependencias
