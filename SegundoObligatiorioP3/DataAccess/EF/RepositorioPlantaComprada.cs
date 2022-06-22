@@ -19,12 +19,13 @@ namespace DataAccess.EF
         public bool Add(PlantaComprada obj)
         {
             bool result = false;
-
-            _dbContext.Add<PlantaComprada>(obj);
-           // var res = _dbContext.Planta.Where(p => p.IdPlanta == obj.IdPlanta);
-           // _dbContext.Entry(res).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged;
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Add<PlantaComprada>(obj);
+                // var res = _dbContext.Planta.Where(p => p.IdPlanta == obj.IdPlanta);
+                // _dbContext.Entry(res).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged;
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
@@ -45,21 +46,25 @@ namespace DataAccess.EF
         public PlantaComprada FindById(object Clave)
         {
             PlantaComprada result = null;
-            int id = (int)Clave;
-            result = _dbContext.PlantaComprada.Find(id);
-
+            if (Clave != null)
+            {
+                int id = (int)Clave;
+                result = _dbContext.PlantaComprada.Find(id);
+            }
             return result;
         }
 
         public bool Remove(object Clave)
         {
             bool result = false;
-
-            PlantaComprada pc = FindById(((PlantaComprada)Clave).IdPlantaComprada);
-            if (pc != null)
+            if (Clave != null)
             {
-                _dbContext.PlantaComprada.Remove(pc);
-                result = _dbContext.SaveChanges() > 0;
+                PlantaComprada pc = FindById(((PlantaComprada)Clave).IdPlantaComprada);
+                if (pc != null)
+                {
+                    _dbContext.PlantaComprada.Remove(pc);
+                    result = _dbContext.SaveChanges() > 0;
+                }
             }
             return result;
         }
@@ -67,9 +72,11 @@ namespace DataAccess.EF
         public bool Update(PlantaComprada obj)
         {
             bool result = false;
-            _dbContext.Update<PlantaComprada>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Update<PlantaComprada>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
     }

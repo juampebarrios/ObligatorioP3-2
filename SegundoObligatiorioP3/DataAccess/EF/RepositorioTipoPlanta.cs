@@ -20,10 +20,11 @@ namespace DataAccess.EF
         public bool Add(TipoPlanta obj)
         {
             bool result = false;
-
-            _dbContext.Add<TipoPlanta>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Add<TipoPlanta>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
@@ -40,31 +41,37 @@ namespace DataAccess.EF
         {
             
             TipoPlanta result = null;
-            int id = (int)Clave;
-            result = _dbContext.TipoPlanta.Find(id);
-
+            if (Clave != null)
+            {
+                int id = (int)Clave;
+                result = _dbContext.TipoPlanta.Find(id);
+            }
             return result;
         }
 
         public bool Remove(object Clave)
         {
             bool result = false;
-            TipoPlanta tp = FindById(((TipoPlanta)Clave).IdTipoPlanta);
-            
-            var t = from miPlanta in _dbContext.Planta where miPlanta.IdTipoPlanta == tp.IdTipoPlanta select miPlanta.IdTipoPlanta;
+            if (Clave != null)
+            {
+                TipoPlanta tp = FindById(((TipoPlanta)Clave).IdTipoPlanta);
+
+                var t = from miPlanta in _dbContext.Planta where miPlanta.IdTipoPlanta == tp.IdTipoPlanta select miPlanta.IdTipoPlanta;
                 _dbContext.TipoPlanta.Remove(tp);
                 result = _dbContext.SaveChanges() > 0;
 
-            
+            }
             return result;
         }
 
         public bool Update(TipoPlanta obj)
         {
             bool result = false;
-            _dbContext.Update<TipoPlanta>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Update<TipoPlanta>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
     }

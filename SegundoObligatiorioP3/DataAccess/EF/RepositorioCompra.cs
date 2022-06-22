@@ -18,10 +18,11 @@ namespace DataAccess.EF
         {
 
             bool result = false;
-
-            _dbContext.Add<Compra>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Add<Compra>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
@@ -37,21 +38,25 @@ namespace DataAccess.EF
         public Compra FindById(object Clave)
         {
             Compra result = null;
-            int id = (int)Clave;
-            result = _dbContext.Compra.Find(id);
-
+            if (Clave != null)
+            {
+                int id = (int)Clave;
+                result = _dbContext.Compra.Find(id);
+            }
             return result;
         }
 
         public bool Remove(object Clave)
         {
             bool result = false;
-
-            Compra autor = FindById(((Compra)Clave).IdCompra);
-            if (autor != null)
+            if (Clave != null)
             {
-                _dbContext.Compra.Remove(autor);
-                result = _dbContext.SaveChanges() > 0;
+                Compra autor = FindById(((Compra)Clave).IdCompra);
+                if (autor != null)
+                {
+                    _dbContext.Compra.Remove(autor);
+                    result = _dbContext.SaveChanges() > 0;
+                }
             }
             return result;
         }
@@ -59,9 +64,11 @@ namespace DataAccess.EF
         public bool Update(Compra obj)
         {
             bool result = false;
-            _dbContext.Update<Compra>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Update<Compra>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
     }

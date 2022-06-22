@@ -47,12 +47,14 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-
-            Plaza autor = FindById(((Plaza)Clave).IdCompra);
-            if (autor != null)
+            if (Clave != null)
             {
-                _dbContext.Plaza.Remove(autor);
-                result = _dbContext.SaveChanges() > 0;
+                Plaza autor = FindById(((Plaza)Clave).IdCompra);
+                if (autor != null)
+                {
+                    _dbContext.Plaza.Remove(autor);
+                    result = _dbContext.SaveChanges() > 0;
+                }
             }
             return result;
         }

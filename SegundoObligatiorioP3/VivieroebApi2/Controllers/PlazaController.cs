@@ -19,9 +19,10 @@ namespace VivieroebApi2.Controllers
     {
         private readonly IRepositorioPlaza _reposPlaza;
         private readonly IRepositorioPlanta _reposPlanta;
-        public PlazaController(IRepositorioPlaza reposPlaza)
+        public PlazaController(IRepositorioPlaza reposPlaza, IRepositorioPlanta reposPlanta)
         {
                _reposPlaza = reposPlaza;
+            _reposPlanta = reposPlanta;
         }
         // GET: api/<ImportacionController>
         [HttpGet]
@@ -44,12 +45,19 @@ namespace VivieroebApi2.Controllers
             if (miPlaza != null)
             {
 
-                if (_reposPlaza.Add(miPlaza))
+                if (_reposPlaza.Add(miPlaza) && miPlaza.PlantasCompradas.Count > 0)
                 {
+                    for (int i = 0; i < miPlaza.PlantasCompradas.Count(); i++)
+                    {
+                        miPlaza.PlantasCompradas[i].IdCompra = miPlaza.IdCompra;
+                        int id = miPlaza.PlantasCompradas[i].IdPlanta;
+                        miPlaza.PlantasCompradas[i].miCompra = _reposPlaza.FindById(miPlaza.IdCompra);
+                        miPlaza.PlantasCompradas[i].UnaPlanta = _reposPlanta.FindById(id);
+                    }/*
                     foreach (var item in miPlaza.PlantasCompradas) 
                     {
                         item.IdCompra = miPlaza.IdCompra;
-                    }
+                    }*/
                     string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
                     Uri uri = new Uri(Request.Scheme + "://" + Request.Host + "/api/" + controllerName + "/" + miPlaza.IdCompra);
 

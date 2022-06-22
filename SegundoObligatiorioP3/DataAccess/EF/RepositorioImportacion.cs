@@ -19,17 +19,18 @@ namespace DataAccess.EF
         public bool Add(Importacion obj)
         {
             bool result = false;
-
-            _dbContext.Add<Importacion>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Add<Importacion>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
         public IEnumerable<Importacion> FindAll()
         {
             IEnumerable<Importacion> result = null;
-
+            
             result = _dbContext.Importacion.ToList();
 
             return result;
@@ -39,7 +40,8 @@ namespace DataAccess.EF
         {
             Importacion result = null;
             int id = (int)Clave;
-            result = _dbContext.Importacion.Find(id);
+            if (Clave != null)
+                result = _dbContext.Importacion.Find(id);
 
             return result;
         }
@@ -47,12 +49,14 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-
-            Importacion autor = FindById(((Importacion)Clave).IdCompra);
-            if (autor != null)
+            if (Clave != null)
             {
-                _dbContext.Importacion.Remove(autor);
-                result = _dbContext.SaveChanges() > 0;
+                Importacion autor = FindById(((Importacion)Clave).IdCompra);
+                if (autor != null)
+                {
+                    _dbContext.Importacion.Remove(autor);
+                    result = _dbContext.SaveChanges() > 0;
+                }
             }
             return result;
         }
@@ -60,9 +64,11 @@ namespace DataAccess.EF
         public bool Update(Importacion obj)
         {
             bool result = false;
-            _dbContext.Update<Importacion>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Update<Importacion>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
     }

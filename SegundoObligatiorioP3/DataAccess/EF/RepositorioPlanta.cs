@@ -20,11 +20,12 @@ namespace DataAccess.EF
         public bool Add(Planta obj)
         {
             bool result = false;
-            
-            
-            _dbContext.Add<Planta>(obj);
-            result = _dbContext.SaveChanges() > 0;
 
+            if (obj != null)
+            {
+                _dbContext.Add<Planta>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
@@ -41,9 +42,11 @@ namespace DataAccess.EF
         public Planta FindById(object Clave)
         {
             Planta result = null;
-            int id = (int)Clave;
-            result = _dbContext.Planta.Find(id);
-
+            if (Clave != null)
+            {
+                int id = (int)Clave;
+                result = _dbContext.Planta.Find(id);
+            }
             return result;
         }
 
@@ -55,12 +58,14 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-
-            Planta autor = FindById(((Planta)Clave).IdPlanta);
-            if (autor != null)
+            if (Clave != null)
             {
-                _dbContext.Planta.Remove(autor);
-                result = _dbContext.SaveChanges() > 0;
+                Planta autor = FindById(((Planta)Clave).IdPlanta);
+                if (autor != null)
+                {
+                    _dbContext.Planta.Remove(autor);
+                    result = _dbContext.SaveChanges() > 0;
+                }
             }
             return result;
         }
@@ -68,9 +73,11 @@ namespace DataAccess.EF
         public bool Update(Planta obj)
         {
             bool result = false;
-            _dbContext.Update<Planta>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Update<Planta>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 

@@ -19,10 +19,11 @@ namespace DataAccess.EF
         public bool Add(Usuario obj)
         {
             bool result = false;
-
-            _dbContext.Add<Usuario>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Add<Usuario>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
@@ -50,6 +51,7 @@ namespace DataAccess.EF
         {
             var result = from miUsuario in _dbContext.Usuario where miUsuario.Email == usu && miUsuario.Password == pass select miUsuario.IdUsuario;
             Usuario logueo = FindById(result);
+            
             return logueo;
             
         }
@@ -57,19 +59,23 @@ namespace DataAccess.EF
         public bool Remove(object Clave)
         {
             bool result = false;
-            Usuario u = FindById(((Usuario)Clave).IdUsuario);
-            _dbContext.Usuario.Remove(u);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (Clave != null)
+            {
+                Usuario u = FindById(((Usuario)Clave).IdUsuario);
+                _dbContext.Usuario.Remove(u);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
 
         public bool Update(Usuario obj)
         {
             bool result = false;
-            _dbContext.Update<Usuario>(obj);
-            result = _dbContext.SaveChanges() > 0;
-
+            if (obj != null)
+            {
+                _dbContext.Update<Usuario>(obj);
+                result = _dbContext.SaveChanges() > 0;
+            }
             return result;
         }
     }
