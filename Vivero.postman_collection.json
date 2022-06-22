@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"FechaCompra\":\"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"PrecioCompra\" : 200,\r\n    \"Flete\" : true,\r\n    \"Iva\" : 22\r\n}",
+							"raw": "{\r\n    \"FechaCompra\":\"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"PrecioCompra\" : 200,\r\n    \"Flete\" : true,\r\n    \"Iva\" : 22,\r\n   \"plantasCompradas\":\r\n    [\r\n        {\r\n            \"IdPlanta\":1,\r\n            \"Cantidad\":5,\r\n            \"PrecioUnitario\":500\r\n        },\r\n        {\r\n            \"IdPlanta\":2,\r\n            \"Cantidad\":7,\r\n            \"PrecioUnitario\":500\r\n        }\r\n\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
