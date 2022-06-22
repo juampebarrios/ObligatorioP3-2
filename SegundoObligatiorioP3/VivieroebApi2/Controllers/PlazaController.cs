@@ -18,10 +18,9 @@ namespace VivieroebApi2.Controllers
     public class PlazaController : ControllerBase
     {
         private readonly IRepositorioPlaza _reposPlaza;
-
         public PlazaController(IRepositorioPlaza reposPlaza)
         {
-            _reposPlaza = reposPlaza;
+               _reposPlaza = reposPlaza;
         }
         // GET: api/<ImportacionController>
         [HttpGet]
@@ -43,8 +42,10 @@ namespace VivieroebApi2.Controllers
         {
             if (miPlaza != null)
             {
+
                 if (_reposPlaza.Add(miPlaza))
                 {
+
                     string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
                     Uri uri = new Uri(Request.Scheme + "://" + Request.Host + "/api/" + controllerName + "/" + miPlaza.IdCompra);
 
