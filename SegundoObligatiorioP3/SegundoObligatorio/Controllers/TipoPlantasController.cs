@@ -27,22 +27,26 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas
         public IActionResult Index()
         {
+            if (ViewBag.usuario != null)
+            {
+                ViewBag.Mensaje = "No se encontraron Tipos";
 
-            ViewBag.Mensaje = "No se encontraron Tipos";
+                IEnumerable<TipoPlanta> misTipoPlanta = _repoTipoPlanta.FindAll();
+                if (misTipoPlanta != null)
+                    return View(misTipoPlanta);
+                else
 
-            IEnumerable<TipoPlanta> misTipoPlanta = _repoTipoPlanta.FindAll();
-            if (misTipoPlanta != null)
-                return View(misTipoPlanta);
-            else
-
-                return View(ViewBag.Mensaje);
-
+                    return View(ViewBag.Mensaje);
+            }
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // GET: Plantas/Details/5
         public IActionResult Details(int? id)
         {
-            if (id == null)
+            if (ViewBag.usuario != null)
+            {
+                if (id == null)
             {
                 return NotFound();
             }
@@ -54,12 +58,18 @@ namespace SegundoObligatorio.Controllers
             }
 
             return View(tipo);
+            }
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // GET: Plantas/Create
         public IActionResult Create()
         {
-            return View();
+            if (ViewBag.usuario != null)
+            {
+                return View();
+            }
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // POST: Plantas/Create
@@ -71,7 +81,9 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(miTipoPlantas.NombreUnico,
+                if (ViewBag.usuario != null)
+                {
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(miTipoPlantas.NombreUnico,
                                                "^[a-zA-Z'.]"))
                 {
                     ViewBag.Retorno = "Error - Nombre no puede contener numeros";
@@ -84,6 +96,8 @@ namespace SegundoObligatorio.Controllers
                     return RedirectToAction(nameof(Index));
                 }
                 return View(miTipoPlantas);
+                }
+                return View("~/Views/Home/Index.cshtml");
             }
             catch (Exception)
             {
@@ -95,7 +109,9 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Edit/5
         public IActionResult Edit(int? id)
         {
-            if (id == null)
+            if (ViewBag.usuario != null)
+            {
+                if (id == null)
             {
                 return NotFound();
             }
@@ -106,6 +122,8 @@ namespace SegundoObligatorio.Controllers
                 return NotFound();
             }
             return View(tipo);
+            }
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // POST: Plantas/Edit/5
@@ -117,7 +135,9 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (ViewBag.usuario != null)
+                {
+                    if (ModelState.IsValid)
                 {
                     _repoTipoPlanta.Update(mitipo);
                     return RedirectToAction(nameof(Index));
@@ -126,7 +146,9 @@ namespace SegundoObligatorio.Controllers
                 {
                     return View(mitipo);
 
+                    }
                 }
+                return View("~/Views/Home/Index.cshtml");
             }
             catch (Exception)
             {
@@ -137,7 +159,9 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Delete/5
         public IActionResult Delete(int? id)
         {
-            if (id == null)
+            if (ViewBag.usuario != null)
+            {
+                if (id == null)
             {
                 return NotFound();
             }
@@ -149,6 +173,8 @@ namespace SegundoObligatorio.Controllers
             }
             
             return View(tipo);
+            }
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // POST: Plantas/Delete/5
@@ -156,9 +182,11 @@ namespace SegundoObligatorio.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            int miId = Convert.ToInt32(ViewBag.id);
+            
             try
+            {if (ViewBag.usuario != null)
             {
+                int miId = Convert.ToInt32(ViewBag.id);
                 var tipo = _repoTipoPlanta.FindById(id);
                 if (tipo != null)
                 {
@@ -169,6 +197,8 @@ namespace SegundoObligatorio.Controllers
                 {
                     return NotFound();
                 }
+                }
+                return View("~/Views/Home/Index.cshtml");
             }
             catch (Exception)
             {

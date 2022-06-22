@@ -35,7 +35,9 @@ namespace SegundoObligatorio.Controllers
                 Usuario miUsu = _repoUsu.Login(usu, pass);
                 if (miUsu != null)
                 {
+                    HttpContext.Session.SetString("usuario", usu);
                     ViewBag.usuario = miUsu;
+                    ViewData["usuario"] = miUsu;
                     return View("~/Views/Home/Index.cshtml");
                 }
                 else
@@ -46,14 +48,16 @@ namespace SegundoObligatorio.Controllers
             }
             else
             {
-                return View("Index");
+                return View("~/Views/Home/Index.cshtml");
             }
         }
 
         public ActionResult LogOut()
         {
+            HttpContext.Session.Clear();
+            ViewData["usuario"] = null;
             ViewBag.usuario = null;
-            return View("~/Views/Usuarios/Index.cshtml");
+            return View("~/Views/Home/Index.cshtml");
         }
         // GET: LoginController/Details/5
         public ActionResult Details(int id)
@@ -64,7 +68,7 @@ namespace SegundoObligatorio.Controllers
         // GET: LoginController/Create
         public ActionResult Create()
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // POST: LoginController/Create
@@ -74,18 +78,18 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("~/Views/Home/Index.cshtml");
             }
             catch
             {
-                return View();
+                return View("~/Views/Home/Index.cshtml");
             }
         }
 
         // GET: LoginController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
         // POST: LoginController/Edit/5
@@ -95,11 +99,11 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return View("~/Views/Home/Index.cshtml");
             }
             catch
             {
-                return View();
+                return View("~/Views/Home/Index.cshtml");
             }
         }
 

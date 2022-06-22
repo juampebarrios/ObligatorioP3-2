@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ViveroContexto))]
-    [Migration("20220619230520_init15")]
-    partial class init15
+    [Migration("20220622224120_init1")]
+    partial class init1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,10 +138,6 @@ namespace DataAccess.Migrations
 
                     b.HasKey("IdPlantaComprada");
 
-                    b.HasIndex("IdCompra");
-
-                    b.HasIndex("IdPlanta");
-
                     b.ToTable("PlantaComprada");
                 });
 
@@ -154,7 +150,8 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("DescripcionTipo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("NombreUnico")
                         .IsRequired()
@@ -223,7 +220,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Dominio.FichaCuidado", b =>
                 {
-                    b.HasOne("Dominio.Planta", "miPlanta")
+                    b.HasOne("Dominio.Planta", "MiPlanta")
                         .WithMany()
                         .HasForeignKey("IdPlanta")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -235,21 +232,6 @@ namespace DataAccess.Migrations
                     b.HasOne("Dominio.TipoPlanta", "MiTipoPlanta")
                         .WithMany()
                         .HasForeignKey("IdTipoPlanta")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Dominio.PlantaComprada", b =>
-                {
-                    b.HasOne("Dominio.Compra", "miCompra")
-                        .WithMany("PlantasCompradas")
-                        .HasForeignKey("IdCompra")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Dominio.TipoPlanta", "UnaPlanta")
-                        .WithMany()
-                        .HasForeignKey("IdPlanta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

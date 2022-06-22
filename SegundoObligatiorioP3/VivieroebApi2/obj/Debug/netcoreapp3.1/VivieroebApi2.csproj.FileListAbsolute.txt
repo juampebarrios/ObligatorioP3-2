@@ -63,3 +63,4 @@ C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\VivieroebAp
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\VivieroebApi2\obj\Debug\netcoreapp3.1\VivieroebApi2.dll
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\VivieroebApi2\obj\Debug\netcoreapp3.1\VivieroebApi2.pdb
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\VivieroebApi2\obj\Debug\netcoreapp3.1\VivieroebApi2.genruntimeconfig.cache
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\VivieroebApi2\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

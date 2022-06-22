@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\Dominio\Dominio.csproj" />
+    <ProjectReference Include="..\VivieroebApi2\VivieroebApi2.csproj" />
   </ItemGroup>
 
   <ItemGroup>

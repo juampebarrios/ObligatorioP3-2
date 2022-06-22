@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"FechaCompra\":\"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"PrecioCompra\" : 200,\r\n    \"TasaImpuesto\" : 100,\r\n    \"EsAmericaSur\" : true,\r\n    \"Descripcion\" : \"test\"\r\n}",
+							"raw": "{\r\n    \"FechaCompra\":\"2022-06-09T21:54:10.5748546-03:00\",\r\n    \"PrecioCompra\" : 200,\r\n    \"TasaImpuesto\" : 100,\r\n    \"EsAmericaSur\" : true,\r\n    \"Descripcion\" : \"test\",\r\n    \"plantasCompradas\":\r\n    [\r\n        {\r\n            \"IdPlanta\":1,\r\n            \"Cantidad\":5,\r\n            \"PrecioUnitario\":500\r\n        },\r\n        {\r\n            \"IdPlanta\":2,\r\n            \"Cantidad\":7,\r\n            \"PrecioUnitario\":500\r\n        }\r\n\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

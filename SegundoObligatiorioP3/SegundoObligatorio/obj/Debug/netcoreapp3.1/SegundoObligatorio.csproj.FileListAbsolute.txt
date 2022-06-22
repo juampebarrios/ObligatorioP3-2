@@ -420,3 +420,11 @@ C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObli
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.dll
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.pdb
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.genruntimeconfig.cache
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\bin\Debug\netcoreapp3.1\VivieroebApi2.deps.json
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\bin\Debug\netcoreapp3.1\VivieroebApi2.runtimeconfig.json
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\bin\Debug\netcoreapp3.1\VivieroebApi2.runtimeconfig.dev.json
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\bin\Debug\netcoreapp3.1\VivieroebApi2.exe
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\bin\Debug\netcoreapp3.1\VivieroebApi2.dll
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\bin\Debug\netcoreapp3.1\VivieroebApi2.pdb
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\SegundoObligatorio.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\SegundoObligatorio\obj\Debug\netcoreapp3.1\Razor\Views\Compras\Index.cshtml.g.cs

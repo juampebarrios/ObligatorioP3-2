@@ -44,7 +44,7 @@ namespace SegundoObligatorio.Controllers
                 if (miUsu != null)
                 {
                     ViewBag.usuario = miUsu;
-                    return View("~/Home/Index");
+                    return View("~/Views/Home/Index.cshtml");
                 }
                 else
                 {

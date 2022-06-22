@@ -17,16 +17,18 @@ namespace Dominio
         [Required]
         public double PrecioUnitario { get; set; }
         
-        
+        [ForeignKey("IdCompra")]
         public int IdCompra { get; set; }
 
-        [ForeignKey("IdCompra")]
-        public Compra miCompra { get; set; }
+        //[NotMapped]
+        //public Compra miCompra { get; set; }
 
-        
-        public int IdPlanta { get; set; }
 
         [ForeignKey("IdPlanta")]
-        public Planta UnaPlanta { get; set; }
+        public int IdPlanta { get; set; }
+
+
+        //[NotMapped]
+        //public Planta UnaPlanta { get; set; }
     }
 }

@@ -136,10 +136,6 @@ namespace DataAccess.Migrations
 
                     b.HasKey("IdPlantaComprada");
 
-                    b.HasIndex("IdCompra");
-
-                    b.HasIndex("IdPlanta");
-
                     b.ToTable("PlantaComprada");
                 });
 
@@ -222,7 +218,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Dominio.FichaCuidado", b =>
                 {
-                    b.HasOne("Dominio.Planta", "miPlanta")
+                    b.HasOne("Dominio.Planta", "MiPlanta")
                         .WithMany()
                         .HasForeignKey("IdPlanta")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -234,21 +230,6 @@ namespace DataAccess.Migrations
                     b.HasOne("Dominio.TipoPlanta", "MiTipoPlanta")
                         .WithMany()
                         .HasForeignKey("IdTipoPlanta")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Dominio.PlantaComprada", b =>
-                {
-                    b.HasOne("Dominio.Compra", "miCompra")
-                        .WithMany("PlantasCompradas")
-                        .HasForeignKey("IdCompra")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Dominio.Planta", "UnaPlanta")
-                        .WithMany()
-                        .HasForeignKey("IdPlanta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

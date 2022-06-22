@@ -45,14 +45,15 @@ namespace VivieroebApi2.Controllers
             if (miPlaza != null)
             {
 
-                if (_reposPlaza.Add(miPlaza) && miPlaza.PlantasCompradas.Count > 0)
+                if (_reposPlaza.Add(miPlaza))
                 {
                     for (int i = 0; i < miPlaza.PlantasCompradas.Count(); i++)
                     {
                         miPlaza.PlantasCompradas[i].IdCompra = miPlaza.IdCompra;
-                        int id = miPlaza.PlantasCompradas[i].IdPlanta;
-                        miPlaza.PlantasCompradas[i].miCompra = _reposPlaza.FindById(miPlaza.IdCompra);
-                        miPlaza.PlantasCompradas[i].UnaPlanta = _reposPlanta.FindById(id);
+
+                       // miPlaza.PlantasCompradas[i].IdPlanta = miPlaza.PlantasCompradas[i].IdPlanta;
+                        
+                      //  miPlaza.PlantasCompradas[i].UnaPlanta = _reposPlanta.FindById(id);
                     }/*
                     foreach (var item in miPlaza.PlantasCompradas) 
                     {

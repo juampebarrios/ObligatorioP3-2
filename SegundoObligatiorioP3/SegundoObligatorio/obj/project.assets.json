@@ -2599,6 +2599,23 @@
         "runtime": {
           "bin/placeholder/Dominio.dll": {}
         }
+      },
+      "VivieroebApi2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VivieroebApi2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VivieroebApi2.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -8499,6 +8516,11 @@
       "type": "project",
       "path": "../Dominio/Dominio.csproj",
       "msbuildProject": "../Dominio/Dominio.csproj"
+    },
+    "VivieroebApi2/1.0.0": {
+      "type": "project",
+      "path": "../VivieroebApi2/VivieroebApi2.csproj",
+      "msbuildProject": "../VivieroebApi2/VivieroebApi2.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8507,7 +8529,8 @@
       "Dominio >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.25",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.25",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "VivieroebApi2 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8547,6 +8570,9 @@
             },
             "C:\\Users\\renzo\\Desktop\\Obl2-p3\\ObligatorioP3-2\\SegundoObligatiorioP3\\Dominio\\Dominio.csproj": {
               "projectPath": "C:\\Users\\renzo\\Desktop\\Obl2-p3\\ObligatorioP3-2\\SegundoObligatiorioP3\\Dominio\\Dominio.csproj"
+            },
+            "C:\\Users\\renzo\\Desktop\\Obl2-p3\\ObligatorioP3-2\\SegundoObligatiorioP3\\VivieroebApi2\\VivieroebApi2.csproj": {
+              "projectPath": "C:\\Users\\renzo\\Desktop\\Obl2-p3\\ObligatorioP3-2\\SegundoObligatiorioP3\\VivieroebApi2\\VivieroebApi2.csproj"
             }
           }
         }

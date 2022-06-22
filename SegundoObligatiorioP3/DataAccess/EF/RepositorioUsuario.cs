@@ -50,7 +50,7 @@ namespace DataAccess.EF
         public Usuario Login(string usu, string pass)
         {
             var result = from miUsuario in _dbContext.Usuario where miUsuario.Email == usu && miUsuario.Password == pass select miUsuario.IdUsuario;
-            Usuario logueo = FindById(result);
+            Usuario logueo = FindById(result.FirstOrDefault());
             
             return logueo;
             

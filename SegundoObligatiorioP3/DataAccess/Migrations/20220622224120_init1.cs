@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccess.Migrations
 {
-    public partial class init : Migration
+    public partial class init1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,13 +28,29 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PlantaComprada",
+                columns: table => new
+                {
+                    IdPlantaComprada = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Cantidad = table.Column<int>(nullable: false),
+                    PrecioUnitario = table.Column<double>(nullable: false),
+                    IdCompra = table.Column<int>(nullable: false),
+                    IdPlanta = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlantaComprada", x => x.IdPlantaComprada);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TipoPlanta",
                 columns: table => new
                 {
                     IdTipoPlanta = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NombreUnico = table.Column<string>(nullable: false),
-                    DescripcionTipo = table.Column<string>(nullable: false)
+                    DescripcionTipo = table.Column<string>(maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -53,6 +69,7 @@ namespace DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuario", x => x.IdUsuario);
+                    table.UniqueConstraint("AK_Usuario_Email", x => x.Email);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,23 +80,22 @@ namespace DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NombreCientifico = table.Column<string>(nullable: false),
                     NombreVulgar = table.Column<string>(nullable: false),
-                    Descripcion = table.Column<string>(nullable: false),
+                    Descripcion = table.Column<string>(maxLength: 200, nullable: false),
                     Ambiente = table.Column<string>(nullable: false),
                     AlturaMax = table.Column<double>(nullable: false),
                     Foto = table.Column<string>(nullable: false),
                     Precio = table.Column<double>(nullable: false),
-                    idTipoPlanta = table.Column<int>(nullable: false),
-                    MiTipoPlantaIdTipoPlanta = table.Column<int>(nullable: true)
+                    IdTipoPlanta = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Planta", x => x.IdPlanta);
                     table.ForeignKey(
-                        name: "FK_Planta_TipoPlanta_MiTipoPlantaIdTipoPlanta",
-                        column: x => x.MiTipoPlantaIdTipoPlanta,
+                        name: "FK_Planta_TipoPlanta_IdTipoPlanta",
+                        column: x => x.IdTipoPlanta,
                         principalTable: "TipoPlanta",
                         principalColumn: "IdTipoPlanta",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,73 +107,35 @@ namespace DataAccess.Migrations
                     FrecuenciaRiego = table.Column<string>(nullable: false),
                     TipoIluminacion = table.Column<string>(nullable: false),
                     Temperatura = table.Column<int>(nullable: false),
-                    idPlanta = table.Column<int>(nullable: false),
-                    miPlantaIdPlanta = table.Column<int>(nullable: true)
+                    IdPlanta = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FichaCuidado", x => x.IdFicha);
                     table.ForeignKey(
-                        name: "FK_FichaCuidado_Planta_miPlantaIdPlanta",
-                        column: x => x.miPlantaIdPlanta,
+                        name: "FK_FichaCuidado_Planta_IdPlanta",
+                        column: x => x.IdPlanta,
                         principalTable: "Planta",
                         principalColumn: "IdPlanta",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PlantaComprada",
-                columns: table => new
-                {
-                    IdPlantaComprada = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Cantidad = table.Column<int>(nullable: false),
-                    PrecioUnitario = table.Column<double>(nullable: false),
-                    idCompra = table.Column<int>(nullable: false),
-                    idPlanta = table.Column<int>(nullable: false),
-                    UnaPlantaIdPlanta = table.Column<int>(nullable: true),
-                    CompraIdCompra = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PlantaComprada", x => x.IdPlantaComprada);
-                    table.ForeignKey(
-                        name: "FK_PlantaComprada_Compra_CompraIdCompra",
-                        column: x => x.CompraIdCompra,
-                        principalTable: "Compra",
-                        principalColumn: "IdCompra",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_PlantaComprada_Planta_UnaPlantaIdPlanta",
-                        column: x => x.UnaPlantaIdPlanta,
-                        principalTable: "Planta",
-                        principalColumn: "IdPlanta",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_FichaCuidado_miPlantaIdPlanta",
+                name: "IX_FichaCuidado_IdPlanta",
                 table: "FichaCuidado",
-                column: "miPlantaIdPlanta");
+                column: "IdPlanta");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Planta_MiTipoPlantaIdTipoPlanta",
+                name: "IX_Planta_IdTipoPlanta",
                 table: "Planta",
-                column: "MiTipoPlantaIdTipoPlanta");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PlantaComprada_CompraIdCompra",
-                table: "PlantaComprada",
-                column: "CompraIdCompra");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PlantaComprada_UnaPlantaIdPlanta",
-                table: "PlantaComprada",
-                column: "UnaPlantaIdPlanta");
+                column: "IdTipoPlanta");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Compra");
+
             migrationBuilder.DropTable(
                 name: "FichaCuidado");
 
@@ -166,9 +144,6 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Usuario");
-
-            migrationBuilder.DropTable(
-                name: "Compra");
 
             migrationBuilder.DropTable(
                 name: "Planta");

@@ -43,8 +43,9 @@ namespace DataAccess.Contexto
 
             modelBuilder.Entity<Planta>().HasOne(t => t.MiTipoPlanta);
             modelBuilder.Entity<FichaCuidado>().HasOne(p => p.MiPlanta);
-            modelBuilder.Entity<PlantaComprada>().HasOne(p => p.UnaPlanta);
-            modelBuilder.Entity<Compra>().HasMany(p => p.PlantasCompradas).WithOne(p => p.miCompra);
+
+            //modelBuilder.Entity<PlantaComprada>().HasOne(p => p.UnaPlanta);
+           // modelBuilder.Entity<Compra>().HasMany(p => p.PlantasCompradas).WithOne(p => p.miCompra);
 
             modelBuilder.Entity<Plaza>().HasBaseType<Compra>();
             modelBuilder.Entity<Importacion>().HasBaseType<Compra>();
