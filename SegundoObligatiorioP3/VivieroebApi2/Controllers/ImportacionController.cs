@@ -44,8 +44,6 @@ namespace VivieroebApi2.Controllers
             {
                 if (_repoImpo.Add(miImportacion))
                 {
-                    int id = miImportacion.IdCompra;
-
                     string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
                     Uri uri = new Uri(Request.Scheme + "://" + Request.Host + "/api/" + controllerName + "/" + miImportacion.IdCompra);
 
@@ -60,7 +58,7 @@ namespace VivieroebApi2.Controllers
             {
                 return BadRequest();
             }
-        }
+        }/*
         [HttpPost]
         public IActionResult Post(Importacion miImportacion, List<PlantaComprada> miLista)
         {
@@ -86,7 +84,7 @@ namespace VivieroebApi2.Controllers
                 return BadRequest();
             }
         }
-
+        */
         // PUT api/<ImportacionController>/5
         [HttpPut]
         

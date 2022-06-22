@@ -27,6 +27,12 @@ namespace DataAccess.EF
 
             return result;
         }
+
+        public bool Add(PlantaComprada obj, Planta p, int cantidad, double precio)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<PlantaComprada> FindAll()
         {
             IEnumerable<PlantaComprada> result = null;
@@ -52,7 +58,7 @@ namespace DataAccess.EF
             PlantaComprada pc = FindById(((PlantaComprada)Clave).IdPlantaComprada);
             if (pc != null)
             {
-                _dbContext.Importacion.Remove(pc);
+                _dbContext.PlantaComprada.Remove(pc);
                 result = _dbContext.SaveChanges() > 0;
             }
             return result;
