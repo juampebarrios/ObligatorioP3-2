@@ -14,6 +14,21 @@ C:\Users\renzo\source\repos\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreap
 C:\Users\renzo\source\repos\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\renzo\source\repos\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\renzo\source\repos\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.genruntimeconfig.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.json
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.dev.json
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.genruntimeconfig.cache
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.json
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.dev.json
@@ -30,18 +45,3 @@ C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\renzo\Desktop\Obl2-p3\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.genruntimeconfig.cache
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.json
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.dev.json
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\Dominio.dll
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\bin\Debug\netcoreapp3.1\Dominio.pdb
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
-C:\Users\joaquin.suarez\OneDrive - Pedidos Ya\Documentos\GitHub\ObligatorioP3-2\SegundoObligatiorioP3\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.genruntimeconfig.cache
