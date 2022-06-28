@@ -205,7 +205,16 @@ namespace SegundoObligatorio.Controllers
             string nombre = HttpContext.Session.GetString("usuario");
             if (nombre != null)
             {
-                return View(_repoPlanta.Buscar(texto,id));
+                ViewBag.Mensaje = "No se encontraron Plantas";
+
+
+
+                IEnumerable<Planta> misPlantas = (_repoPlanta.Buscar(texto, id));
+                if (misPlantas != null)
+                    return View(misPlantas);
+                else
+
+                    return View(ViewBag.Mensaje);
             }
             else
             {

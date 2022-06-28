@@ -227,7 +227,14 @@ namespace SegundoObligatorio.Controllers
             string nombre = HttpContext.Session.GetString("usuario");
             if (nombre != null)
             {
-                return View(_repoTipoPlanta.Buscar(texto));
+                ViewBag.Mensaje = "No se encontraron Tipos";
+
+                IEnumerable<TipoPlanta> misTipoPlanta = _repoTipoPlanta.Buscar(texto);
+                if (misTipoPlanta != null)
+                    return View(misTipoPlanta);
+                else
+
+                    return View(ViewBag.Mensaje);
             }
             else
             {
