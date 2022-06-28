@@ -50,7 +50,12 @@ namespace SegundoObligatorio.Controllers
                 return View("~/Views/Home/Index.cshtml");
             }
         }
-
+        [HttpPost]
+        public IActionResult AgregarPred()
+        {
+            _repoUsu.AddUsers();
+            return View("~/Login");
+        }
         public ActionResult LogOut()
         {
             HttpContext.Session.Clear();

@@ -80,21 +80,35 @@ namespace DataAccess.EF
         }
 
 
-        public void AddUsers()
+        public bool AddUsers()
         {
-
+            bool result = false;
             Usuario mi1 = new Usuario();
             mi1.Email = "renzo@mail.com";
             mi1.Password = "password";
             Usuario mi2 = new Usuario();
-            mi1.Email = "juan@mail.com";
-            mi1.Password = "password"; 
+            mi2.Email = "juan@mail.com";
+            mi2.Password = "password"; 
             Usuario mi3 = new Usuario();
-            mi1.Email = "joaco@mail.com";
-            mi1.Password = "password";
+            mi3.Email = "joaco@mail.com";
+            mi3.Password = "password";
             _dbContext.Add<Usuario>(mi1);
             _dbContext.Add<Usuario>(mi2);
             _dbContext.Add<Usuario>(mi3);
+
+            result = _dbContext.SaveChanges() > 0;
+           
+
+
+
+            var usuario = new Usuario()
+            {
+                Email = "renzo@mailmail.com",
+                Password = "password"
+            };
+            _dbContext.Usuario.Add(usuario);
+            _dbContext.SaveChanges();
+            return result;
         }
     }
 }

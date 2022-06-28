@@ -71,7 +71,7 @@ namespace SegundoObligatorio.Controllers
         public IActionResult AgregarPred() 
         {
             _repoUsu.AddUsers();
-            return View("Login");
+            return View("~/Views/Home/Index.cshtml");
         }
 
         //----------------------------------------------------------//
