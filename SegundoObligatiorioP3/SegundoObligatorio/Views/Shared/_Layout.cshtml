@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+ 
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container"  >
                 <img src="~/assets/logo.svg" width="40" height="40" class="d-inline-block align-top mr-2" alt="">
-                <a class="navbar-brand">SegundoObligatorio</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" >SegundoObligatorio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                       
+                       @if (TempData["usuario"] != null)
+                       {
                             <li class="nav-item dropdown">
                                 
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,19 +52,19 @@
 
                             </div>
                         </li>
-                        
+                       }
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Cuenta
                             </a>
                             
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @if (ViewBag.usuario == null)
+                                @if (TempData["usuario"] == null)
                                 {
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Login">Login</a>}
                                 else
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Logout">Logout</a>}
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="LogOut">Logout</a>}
                             </div>
                         </li>
 
@@ -80,7 +82,7 @@
 
         <footer class="border-top footer text-muted">
             <div class="container">
-                &copy; 2022 - SegundoObligatorio -
+                &copy; 2022 - SegundoObligatorio - @TempData["usuario"]
             </div>
         </footer>
         <script src="~/lib/jquery/dist/jquery.min.js"></script>

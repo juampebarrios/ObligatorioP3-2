@@ -12,6 +12,13 @@ namespace SegundoObligatorio.Controllers
         // GET: HomeController
         public ActionResult Index()
         {
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
+            {
+                TempData["usuario"] = nombre;
+            }
+            else
+                HttpContext.Session.Clear();
             return View();
         }
 

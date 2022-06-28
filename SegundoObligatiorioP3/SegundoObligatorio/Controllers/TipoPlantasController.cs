@@ -27,8 +27,13 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas
         public IActionResult Index()
         {
-            if (ViewBag.usuario != null)
+            var temp = TempData["usuario"];
+
+
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
             {
+
                 ViewBag.Mensaje = "No se encontraron Tipos";
 
                 IEnumerable<TipoPlanta> misTipoPlanta = _repoTipoPlanta.FindAll();
@@ -44,7 +49,8 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Details/5
         public IActionResult Details(int? id)
         {
-            if (ViewBag.usuario != null)
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
             {
                 if (id == null)
             {
@@ -65,7 +71,8 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Create
         public IActionResult Create()
         {
-            if (ViewBag.usuario != null)
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
             {
                 return View();
             }
@@ -81,7 +88,8 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                if (ViewBag.usuario != null)
+                string nombre = HttpContext.Session.GetString("usuario");
+                if (nombre != null)
                 {
                     if (!System.Text.RegularExpressions.Regex.IsMatch(miTipoPlantas.NombreUnico,
                                                "^[a-zA-Z'.]"))
@@ -109,7 +117,8 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Edit/5
         public IActionResult Edit(int? id)
         {
-            if (ViewBag.usuario != null)
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
             {
                 if (id == null)
             {
@@ -135,7 +144,8 @@ namespace SegundoObligatorio.Controllers
         {
             try
             {
-                if (ViewBag.usuario != null)
+                string nombre = HttpContext.Session.GetString("usuario");
+                if (nombre != null)
                 {
                     if (ModelState.IsValid)
                 {
@@ -159,7 +169,8 @@ namespace SegundoObligatorio.Controllers
         // GET: Plantas/Delete/5
         public IActionResult Delete(int? id)
         {
-            if (ViewBag.usuario != null)
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
             {
                 if (id == null)
             {
@@ -184,8 +195,10 @@ namespace SegundoObligatorio.Controllers
         {
             
             try
-            {if (ViewBag.usuario != null)
             {
+                string nombre = HttpContext.Session.GetString("usuario");
+                if (nombre != null)
+                {
                 int miId = Convert.ToInt32(ViewBag.id);
                 var tipo = _repoTipoPlanta.FindById(id);
                 if (tipo != null)

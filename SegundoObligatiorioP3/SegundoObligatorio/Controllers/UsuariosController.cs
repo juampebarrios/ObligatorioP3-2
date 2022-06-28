@@ -43,7 +43,8 @@ namespace SegundoObligatorio.Controllers
                 Usuario miUsu = _repoUsu.Login(usu, pass);
                 if (miUsu != null)
                 {
-                    ViewBag.usuario = miUsu;
+                    TempData["usuario"] = usu;
+                    HttpContext.Session.SetString("usuario", usu);
                     return View("~/Views/Home/Index.cshtml");
                 }
                 else
@@ -60,8 +61,10 @@ namespace SegundoObligatorio.Controllers
 
         public ActionResult LogOut()
         {
-            ViewBag.usuario = null;
-            return View("~/Views/Usuarios/Index.cshtml");
+
+            HttpContext.Session.Clear();
+            TempData["usuario"] = null;
+            return View("~/Views/Home/Index.cshtml");
         }
 
 

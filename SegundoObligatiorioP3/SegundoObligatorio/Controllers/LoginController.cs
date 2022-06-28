@@ -33,11 +33,10 @@ namespace SegundoObligatorio.Controllers
             if (usu != "" && pass != "")
             {
                 Usuario miUsu = _repoUsu.Login(usu, pass);
-                if (miUsu != null)
+
+                string nombre = HttpContext.Session.GetString("usuario");
+                if (nombre != null)
                 {
-                    HttpContext.Session.SetString("usuario", usu);
-                    ViewBag.usuario = miUsu;
-                    ViewData["usuario"] = miUsu;
                     return View("~/Views/Home/Index.cshtml");
                 }
                 else
@@ -55,8 +54,6 @@ namespace SegundoObligatorio.Controllers
         public ActionResult LogOut()
         {
             HttpContext.Session.Clear();
-            ViewData["usuario"] = null;
-            ViewBag.usuario = null;
             return View("~/Views/Home/Index.cshtml");
         }
         // GET: LoginController/Details/5

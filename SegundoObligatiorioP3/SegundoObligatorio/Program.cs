@@ -21,6 +21,7 @@ namespace SegundoObligatorio
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
                 });
     }
 }
