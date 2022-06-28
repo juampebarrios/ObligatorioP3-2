@@ -78,5 +78,23 @@ namespace DataAccess.EF
             }
             return result;
         }
+
+
+        public void AddUsers()
+        {
+
+            Usuario mi1 = new Usuario();
+            mi1.Email = "renzo@mail.com";
+            mi1.Password = "password";
+            Usuario mi2 = new Usuario();
+            mi1.Email = "juan@mail.com";
+            mi1.Password = "password"; 
+            Usuario mi3 = new Usuario();
+            mi1.Email = "joaco@mail.com";
+            mi1.Password = "password";
+            _dbContext.Add<Usuario>(mi1);
+            _dbContext.Add<Usuario>(mi2);
+            _dbContext.Add<Usuario>(mi3);
+        }
     }
 }
