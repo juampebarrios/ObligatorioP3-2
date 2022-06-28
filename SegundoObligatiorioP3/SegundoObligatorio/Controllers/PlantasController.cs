@@ -199,6 +199,23 @@ namespace SegundoObligatorio.Controllers
             return View("~/Views/Home/Index.cshtml");
         }
 
+        [HttpPost]
+        public ActionResult BuscarPlanta(int id, string texto)
+        {
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
+            {
+                return View(_repoPlanta.Buscar(texto,id));
+            }
+            else
+            {
+
+                return View("~/Views/Home/Index.cshtml");
+
+
+            }
+
+        }
         // POST: Plantas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -12,7 +12,25 @@
 {
 
 
-
+    <form method="post" asp-action="BuscarPlanta">
+        <div class="form-group row justify-content-center mt-3">
+            <select name="id" class="form-control col col-sm-3" id="selSearchPlant">
+                <option value="">Seleccione...</option>
+                <option value="0">Nombre Científico</option>
+                <option value="1">Nombre Vulgar</option>
+                <option value="2">Tipo</option>
+                <option value="3">Ambiente</option>
+                <option value="4">Altura menor a:</option>
+                <option value="5">Altura mayor a:</option>
+            </select>
+            <div class="input-group mb-2 col col-sm-6">
+                <input type="text" class="form-control" name="texto" id='txtSearchPlant' placeholder="Ingrese búsqueda...">
+                <div class="input-group-append">
+                    <input class="btn btn-primary" id="btnSearchPlant" type="submit" value="Buscar">
+                </div>
+            </div>
+        </div>
+    </form>
 
     <table class="table" id="1">
         <thead>

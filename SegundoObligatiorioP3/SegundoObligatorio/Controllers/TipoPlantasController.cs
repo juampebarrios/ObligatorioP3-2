@@ -221,5 +221,23 @@ namespace SegundoObligatorio.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult BuscarTipo(string texto)
+        {
+            string nombre = HttpContext.Session.GetString("usuario");
+            if (nombre != null)
+            {
+                return View(_repoTipoPlanta.Buscar(texto));
+            }
+            else
+            {
+
+                return View("~/Views/Home/Index.cshtml");
+
+
+            }
+
+        }
+
     }
 }

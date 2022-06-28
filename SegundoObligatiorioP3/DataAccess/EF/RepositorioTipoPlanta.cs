@@ -39,7 +39,7 @@ namespace DataAccess.EF
 
         public TipoPlanta FindById(object Clave)
         {
-            
+
             TipoPlanta result = null;
             if (Clave != null)
             {
@@ -73,6 +73,14 @@ namespace DataAccess.EF
                 result = _dbContext.SaveChanges() > 0;
             }
             return result;
+        }
+
+
+
+        public IEnumerable<TipoPlanta> Buscar(string name)
+        {
+            ICollection<TipoPlanta> result = new List<TipoPlanta>();
+            return result = (_dbContext.TipoPlanta.Where(p => p.NombreUnico.Contains(name))).ToList();
         }
     }
 }

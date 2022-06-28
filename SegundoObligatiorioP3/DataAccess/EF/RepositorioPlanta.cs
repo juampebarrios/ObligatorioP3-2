@@ -80,6 +80,45 @@ namespace DataAccess.EF
             }
             return result;
         }
+        public IEnumerable<Planta> Buscar(string name,int id)
+        {
+            ICollection<Planta> result = new List<Planta>();
+
+            switch (id)
+            {
+                case 0:
+                    result = (_dbContext.Planta.Where(p => p.NombreCientifico.Contains(name))).ToList();
+                    break;
+                case 1:
+                    result = (_dbContext.Planta.Where(p => p.NombreVulgar.Contains(name))).ToList();
+                    break;
+                case 2:
+                    result = (_dbContext.Planta.Where((p => p.IdTipoPlanta.Equals(name)))).ToList();
+                    break;
+                case 3:
+                    result = (_dbContext.Planta.Where(p => p.Ambiente.Contains(name))).ToList();
+                    break;
+
+                    /*
+                case 4:
+                        
+                    //menor
+                    break;
+                case 5:
+                    //mayor
+                    result = (_dbContext.Planta.Where(p => p.AlturaMax.Equals(name))).ToList();
+                    break;*/
+                default:
+                    result = _dbContext.Planta.ToList();
+                    break;
+
+
+
+            }
+            return result;
+
+        }
+
 
     }
 }
